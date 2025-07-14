@@ -86,10 +86,6 @@ def create_wallet_from_mnemonic(
 
 if __name__ == "__main__":
     print("BITTENSOR WALLET GENERATOR")
-    print("=" * 50)
-    print("NOTE: The mnemonics are printed above during wallet creation.")
-    print("Please save them securely - they are NOT stored in the JSON output for security.")
-    print("=" * 50)
     
     # Create a new wallet
     wallet_info = create_new_wallet("test_wallet")
@@ -100,12 +96,11 @@ if __name__ == "__main__":
         print("="*50)
         print(f"Name: {wallet_info['wallet_name']}")
         print(f"Coldkey Address: {wallet_info['coldkey_address']}")
-        print(f"Hotkey Address: {wallet_info['hotkey_address']}")  
+        print(f"Hotkey Address: {wallet_info['hotkey_address']}")
         
         # Save to JSON
         with open(f"{wallet_info['wallet_name']}_info.json", "w") as f:
             json.dump(wallet_info, f, indent=2)
         print(f"\nWallet info saved to {wallet_info['wallet_name']}_info.json")
-        print("(Note: Mnemonics and private keys are NOT included in JSON file for security)")
     else:
         print(f"Failed to create wallet: {wallet_info['error']}") 
