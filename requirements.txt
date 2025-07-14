@@ -1,0 +1,13 @@
+# Bittensor Wallet Generator Requirements
+# =====================================
+
+# Main Bittensor SDK
+bittensor>=9.0.0
+
+# Standalone Bittensor Wallet SDK (optional)
+bittensor-wallet>=3.0.0
+
+# Additional dependencies that might be needed
+cryptography>=3.4.8
+substrateinterface>=1.7.0
+scalecodec>=1.2.0 
