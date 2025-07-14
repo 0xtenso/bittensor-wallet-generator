@@ -22,12 +22,11 @@ def create_new_wallet(
         wallet = Wallet(name=wallet_name, path=wallet_path)
         
         # Create coldkey and hotkey
-        print("\n=== Creating Coldkey ===")
+        print("\n Creating Coldkey ")
         wallet.create_new_coldkey(n_words=12, use_password=False, overwrite=overwrite)
-        print("\n=== Creating Hotkey ===")
+        print("\n Creating Hotkey ")
         wallet.create_new_hotkey(n_words=12, use_password=False, overwrite=overwrite)
         
-        # Extract wallet information (mnemonics are printed during creation above)
         result.update({
             "success": True,
             "coldkey_address": wallet.coldkeypub.ss58_address,
